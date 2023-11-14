@@ -106,9 +106,6 @@ int main(void)
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
 	  SystemFSM();
-//	  fsm_for_input_processing(0);
-//	  fsm_for_input_processing(1);
-//	  fsm_for_input_processing(2);
 	  if(flag[2] == 1){
 		  setTimer(25, 2);
 		  Update7SEG(id++);
