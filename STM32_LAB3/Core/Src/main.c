@@ -22,8 +22,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "software_timer.h"
 #include "global.h"
+#include "System_FSM.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -91,6 +91,9 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
+  status = INIT;
+
+  setTimer(10, 2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -98,8 +101,14 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
+	  SystemFSM();
+
+//	  if(flag[1] == 1){
+//		  setTimer(10, 1);
+//		  Update7SEG(id++);
+//		  if(id >= 4) id = 0;
+//	  }
   }
   /* USER CODE END 3 */
 }
@@ -239,7 +248,19 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef * htim){
+	// timer run for traffic light 1
 	timer_run(0);
+	// timer run for traffic light 2
+	timer_run(1);
+	// timer run for quet led
+	timer_run(2);
+	// read button 1
+	button_reading(0);
+	// read button 2
+	button_reading(1);
+	// read button 3
+	button_reading(2);
+	// quet led
 }
 /* USER CODE END 4 */
 

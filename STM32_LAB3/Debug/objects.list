@@ -1,4 +1,8 @@
+"./Core/Src/Ouput.o"
+"./Core/Src/System_FSM.o"
+"./Core/Src/Traffic_Light_FSM.o"
 "./Core/Src/global.o"
+"./Core/Src/input_reading.o"
 "./Core/Src/main.o"
 "./Core/Src/software_timer.o"
 "./Core/Src/stm32f1xx_hal_msp.o"
