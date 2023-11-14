@@ -9,6 +9,7 @@ C_SRCS += \
 ../Core/Src/System_FSM.c \
 ../Core/Src/Traffic_Light_FSM.c \
 ../Core/Src/global.c \
+../Core/Src/input_processing.c \
 ../Core/Src/input_reading.c \
 ../Core/Src/main.c \
 ../Core/Src/software_timer.c \
@@ -23,6 +24,7 @@ OBJS += \
 ./Core/Src/System_FSM.o \
 ./Core/Src/Traffic_Light_FSM.o \
 ./Core/Src/global.o \
+./Core/Src/input_processing.o \
 ./Core/Src/input_reading.o \
 ./Core/Src/main.o \
 ./Core/Src/software_timer.o \
@@ -37,6 +39,7 @@ C_DEPS += \
 ./Core/Src/System_FSM.d \
 ./Core/Src/Traffic_Light_FSM.d \
 ./Core/Src/global.d \
+./Core/Src/input_processing.d \
 ./Core/Src/input_reading.d \
 ./Core/Src/main.d \
 ./Core/Src/software_timer.d \

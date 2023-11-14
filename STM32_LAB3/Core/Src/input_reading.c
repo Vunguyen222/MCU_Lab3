@@ -21,7 +21,6 @@ static uint8_t flagForButtonPress1s[NO_OF_BUTTONS];
 
 static uint16_t counterForButtonPress1s[NO_OF_BUTTONS];
 
-uint8_t first = 1;
 
 void InitButton(){
 	for(unsigned char i = 0; i < NO_OF_BUTTONS; i ++){
@@ -31,10 +30,6 @@ void InitButton(){
 	}
 }
 void button_reading(unsigned char index){
-	if(first){
-		InitButton();
-		first = 0;
-	}
 	debounceButtonBuffer2[index] = debounceButtonBuffer1[index];
 	if(index == 0){
 		debounceButtonBuffer1[index] = HAL_GPIO_ReadPin(button1_GPIO_Port, button1_Pin);

@@ -9,6 +9,9 @@
 #define INC_TRAFFIC_LIGHT_FSM_H_
 
 #include "global.h"
+#include "software_timer.h"
+#include "main.h"
+#include "Ouput.h"
 
 void TrafficLightFSM1();
 void TrafficLightFSM2();

@@ -8,11 +8,6 @@
 #ifndef INC_GLOBAL_H_
 #define INC_GLOBAL_H_
 
-#include "main.h"
-#include "software_timer.h"
-#include "input_reading.h"
-#include "Ouput.h"
-
 #define Internalclock 8000000
 #define Onesecond 1000
 
@@ -20,6 +15,10 @@ extern int prescaler;
 extern int period;
 extern int time_cycle;
 extern int id;
+extern int button1_press;
+extern int button2_press;
+extern int button3_press;
+extern int button2_first_press1s;
 
 enum State { INIT, MODE1_NORMAL, MODE2_MANRED, MODE3_MANYELLOW,
 	MODE4_MANGREEN

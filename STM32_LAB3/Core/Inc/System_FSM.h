@@ -10,6 +10,8 @@
 
 #include "global.h"
 #include "Traffic_Light_FSM.h"
+#include "input_reading.h"
+#include "software_timer.h"
 
 void SystemFSM();
 #endif /* INC_SYSTEM_FSM_H_ */

@@ -18,9 +18,9 @@ void TrafficLightFSM1(){
 			if(flag[0] == 1){
 				setTimer(100, 0);
 				Red1--;
-				if(Red1 <= 0){
+				if(Red1 < 0){
 					TL1 = GREEN;
-					Red1 = redlight;
+					Green1 = greenlight;
 				}
 			}
 			break;
@@ -33,9 +33,9 @@ void TrafficLightFSM1(){
 			if(flag[0] == 1){
 				setTimer(100, 0);
 				Green1--;
-				if(Green1 <= 0){
+				if(Green1 < 0){
 					TL1 = YELLOW;
-					Green1 = greenlight;
+					Yellow1 = yellowlight;
 				}
 			}
 			break;
@@ -48,9 +48,9 @@ void TrafficLightFSM1(){
 			if(flag[0] == 1){
 				setTimer(100, 0);
 				Yellow1--;
-				if(Yellow1 <= 0){
+				if(Yellow1 < 0){
 					TL1 = RED;
-					Yellow1 = yellowlight;
+					Red1 = redlight;
 				}
 			}
 			break;
@@ -68,11 +68,11 @@ void TrafficLightFSM2(){
 			Updatebuffer(Red2, 2);
 
 			if(flag[1] == 1){
-				setTimer(100, 0);
+				setTimer(100, 1);
 				Red2--;
-				if(Red2 <= 0){
+				if(Red2 < 0){
 					TL2 = GREEN;
-					Red2 = redlight;
+					Green2 = greenlight;
 				}
 			}
 			break;
@@ -83,11 +83,11 @@ void TrafficLightFSM2(){
 			Updatebuffer(Green2, 2);
 
 			if(flag[1] == 1){
-				setTimer(100, 0);
+				setTimer(100, 1);
 				Green2--;
-				if(Green2 <= 0){
+				if(Green2 < 0){
 					TL2 = YELLOW;
-					Green2 = greenlight;
+					Yellow2 = yellowlight;
 				}
 			}
 			break;
@@ -98,11 +98,11 @@ void TrafficLightFSM2(){
 			Updatebuffer(Yellow2, 2);
 
 			if(flag[1] == 1){
-				setTimer(100, 0);
+				setTimer(100, 1);
 				Yellow2--;
-				if(Yellow2 <= 0){
+				if(Yellow2 < 0){
 					TL2 = RED;
-					Yellow2 = yellowlight;
+					Red2 = redlight;
 				}
 			}
 			break;

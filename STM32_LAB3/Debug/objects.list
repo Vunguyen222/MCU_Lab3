@@ -2,6 +2,7 @@
 "./Core/Src/System_FSM.o"
 "./Core/Src/Traffic_Light_FSM.o"
 "./Core/Src/global.o"
+"./Core/Src/input_processing.o"
 "./Core/Src/input_reading.o"
 "./Core/Src/main.o"
 "./Core/Src/software_timer.o"

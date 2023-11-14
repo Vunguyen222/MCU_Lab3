@@ -24,6 +24,8 @@
 /* USER CODE BEGIN Includes */
 #include "global.h"
 #include "System_FSM.h"
+#include "input_reading.h"
+#include "input_processing.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -91,9 +93,10 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
-  status = INIT;
 
-  setTimer(10, 2);
+  InitButton();
+  InitButtonState();
+  setTimer(25, 2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -103,12 +106,14 @@ int main(void)
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
 	  SystemFSM();
-
-//	  if(flag[1] == 1){
-//		  setTimer(10, 1);
-//		  Update7SEG(id++);
-//		  if(id >= 4) id = 0;
-//	  }
+//	  fsm_for_input_processing(0);
+//	  fsm_for_input_processing(1);
+//	  fsm_for_input_processing(2);
+	  if(flag[2] == 1){
+		  setTimer(25, 2);
+		  Update7SEG(id++);
+		  if(id >= 4) id = 0;
+	  }
   }
   /* USER CODE END 3 */
 }
@@ -254,6 +259,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef * htim){
 	timer_run(1);
 	// timer run for quet led
 	timer_run(2);
+	// timer for blinking led 2HZ
+	timer_run(3);
+	// timer for long press 1s button2
+	timer_run(4);
 	// read button 1
 	button_reading(0);
 	// read button 2
