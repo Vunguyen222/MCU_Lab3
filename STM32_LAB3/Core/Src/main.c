@@ -25,7 +25,6 @@
 #include "global.h"
 #include "System_FSM.h"
 #include "input_reading.h"
-#include "input_processing.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,7 +94,6 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim2);
 
   InitButton();
-  InitButtonState();
   setTimer(25, 2);
   /* USER CODE END 2 */
 
